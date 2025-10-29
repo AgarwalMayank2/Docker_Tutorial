@@ -29,4 +29,17 @@ To enter the bash or shell of a container for running some extra commands, we ca
 
 Sometimes we want that our containers should be able to talk among themselves without using any port. For this we can make a docker network which is made by:- `docker network create <network_name>`. To see all the networks running:- `docker network ls` and while running a docker image, use the tag `--network <network_name>`.
 
-Docker compose:- It is a .yaml type file in which we write all the commands which we read previously and rather than executing those commands, we can execute this file. (Just make things easier)
+Docker compose:- It is a .yaml type file in which we write all the commands which we read previously and rather than executing those commands, we can execute this file. (Just make things easier)  
+
+## Building docker image
+
+To build our own docker, we make a 'Dockerfile' which is script which consists of instructions that how do we want to execute our files and with what dependencies. A dockerfile contains the following instructions:-  
+
+`FROM` <base_image>  (The base image on which our files will be working let's say python 3.11)  
+`WORKDIR` <directory> (The directory which contains the files)  
+`RUN` <install_dependencies> (Installing all the dependies for our app)  
+`COPY` <source_code> (Copying the source code of project)  
+`CMD` <run_command>  (It will contain the command we will execute to finally run the project)  
+`EXPOSE` <port>      (To expose ports of an image)  
+`ENV` <variables>    (To define environment variables)  
+
