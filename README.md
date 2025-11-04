@@ -43,3 +43,11 @@ To build our own docker, we make a 'Dockerfile' which is script which consists o
 `EXPOSE` <port>      (To expose ports of an image)  
 `ENV` <variables>    (To define environment variables)  
 
+After this, to make a build of this dockerfile, run the command:- `docker build -t <image_name>:<any_tag_version> .`  
+Put '.' in last if you are in the same directory where your docker file is else give location.  
+
+We can also attach our host memory with docker data so that our data is not lost after exiting the docker container. This is referred by docker volumes.  
+
+## Push to docker hub  
+We can push this docker iamge on the docker hub. For this, make a user on docker hub and while building the image build it as:- `docker build -t <username>/<image_name>:<tag> .`. Note that username is compulsory here and username is the name of our docker hub profile.  
+Now run the command:- `docker push <username>/<image_name>:<tag>`.
